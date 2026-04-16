@@ -52,6 +52,7 @@
     $paring = "SELECT * FROM cars WHERE id=5";
     $valjund = mysqli_query($yhendus, $paring);
     $rida = mysqli_fetch_assoc($valjund);
+    var_dump($rida);
 ?>
 
     <!-- sisu -->
@@ -63,11 +64,8 @@
   <div class="col-sm-6">
 
     <h2><?php echo $rida['mark']." ".$rida['model']; ?></h2>
-    <p><?php echo $rida['year']; ?></p>
     <p>Mootor: <?php echo $rida['engine']; ?></p>
     <p>Kütus: <?php echo $rida['fuel']; ?></p>
-    <p>Käigukast: <?php echo $rida['transmission']; ?></p>
-    <p>Kohad: <?php echo $rida['seats']; ?></p>
     <p>Hind: <?php echo $rida['price']; ?>€/päev</p>
     <a href="#" class="btn btn-dark w-100">Rendi auto</a>
   </div>
