@@ -28,7 +28,8 @@
             <td>".$rida['fuel']."</td>
             <td>".$rida['price']."</td>
             <td>".$rida['image']."</td>
-            <td><a href='kustuta.php'>Kustuta</a></td>
+            <td><a href='kustuta.php?id=".$rida['id']."'>Kustuta</a></td>
+            <td><a href='muuda.php?id=".$rida['id']."'>Muuda</a></td>
         </tr>";
     }
 ?>
