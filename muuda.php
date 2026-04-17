@@ -20,15 +20,16 @@
 
         $paring = "SELECT * FROM cars WHERE id=".$_GET['id']."";
         $valjund = mysqli_query($yhendus, $paring);
-
+        $rida = mysqli_fetch_assoc($valjund);
+        print_r($rida);
 ?>
        
-<form action="lisa.php" method="get">
-    Mark <input type="text" name="mark" value="ford"><br>
-    Model <input type="text" name="model" value="focus"><br>
-    Engine <input type="text" name="engine" value="v8"><br>
-    Fuel <input type="text" name="fuel" value="bensiin"><br>
-    Price <input type="number" name="price" value="100"><br>
-    Image <input type="text" name="image" value="ford.jpg"><br>
-    <input type="submit" value="Lisa auto"><br>
+<form action="muuda.php" method="get">
+    Mark <input type="text" name="mark" value="<?php echo $rida['mark']; ?>"><br>
+    Model <input type="text" name="model" value="<?php echo $rida['model']; ?>"><br>
+    Engine <input type="text" name="engine" value="<?php echo $rida['engine']; ?>"><br>
+    Fuel <input type="text" name="fuel" value="<?php echo $rida['fuel']; ?>"><br>
+    Price <input type="number" name="price" value="<?php echo $rida['price']; ?>"><br>
+    Image <input type="text" name="image" value="<?php echo $rida['image']; ?>"><br>
+    <input type="submit" value="Salvesta auto"><br>
 </form> 
